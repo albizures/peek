@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import './vendor/Bootstrap/css/bootstrap.css';
+
 import SignIn from './SignIn.js';
 
 const obj = {};
