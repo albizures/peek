@@ -1,6 +1,6 @@
 import React from 'react';
 import * as firebase from 'firebase';
-
+import Btn from './components/Button.js';
 const provider = new firebase.auth.GoogleAuthProvider();
 const obj = {};
 
@@ -8,7 +8,7 @@ obj.render = function () {
   return <div>
     <h1 className="titulo text-center">Peek</h1>
     <div className="well center-block sign-in-module">
-      <button type="button" className="btn btn-success btn-block " onClick={this.onClick}>Sign In</button>
+      <Btn success block onClick={this.onClick}>Sign In</Btn>
     </div>
   </div>;
 };
@@ -19,13 +19,6 @@ obj.componentDidMount = function () {
     this.setState({
       name: snapshot.val()
     });
-  });
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      console.log('Yes', user);
-    } else {
-      console.log('No');
-    }
   });
 };
 
