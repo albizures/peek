@@ -8,14 +8,10 @@ const obj = {};
 obj.displayName = 'App';
 
 obj.componentDidMount = function () {
-  console.info(this);
   let currentUser = firebase.auth().currentUser;
   if (!currentUser) {
     firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        console.log(this);
-        this.dispatcher(actions.setUser(user));
-      }
+      this.dispatcher(actions.setUser(user));
     });
   }
 };
