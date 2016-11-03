@@ -1,6 +1,6 @@
 import React from 'react';
 import * as firebase from 'firebase';
-import Btn from './components/Button.js';
+import Btn from './Button.js';
 const provider = new firebase.auth.GoogleAuthProvider();
 const obj = {};
 
